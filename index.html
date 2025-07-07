@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+
+</head>
+<body >
+
+    <video autoplay loop muted plays-inline class="background-clip">
+            <source src="assets/bg.mp4" type="video/mp4">
+    </video>
+
+    <main>
+        <header id="header">
+            <div class="player player-active"
+            id="xPlayerDisplay"
+            onclick="choosePlayer('X')">
+            X
+            </div>
+            <h3 id="titleHeader">Choose</h3>
+            <div class="player"
+            id="oPlayerDisplay"
+            onclick="choosePlayer('O')">
+            O
+            </div>
+        </header>
+
+        <div id="board">
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+            <div class="cell" onclick="audio.play()"></div>
+        </div>
+
+        <button id="restartBtn" onclick="restart.play()">
+            Restart
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        const audio = new Audio("assets/click.mp3")
+        const restart = new Audio("assets/restart.mp3")
+
+        const bgMusic = new Audio("assets/bg.mp3");
+        bgMusic.loop = true;
+
+        document.addEventListener("click", () => {
+            bgMusic.play().catch(e => {
+                console.warn("Autoplay blocked:", e);
+            });
+        }, { once: true });
+    </script>
+</body>
+</html>
