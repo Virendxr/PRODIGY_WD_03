@@ -35,6 +35,7 @@ main {
         height: 100%;
     }
 }
+
 @media (max-width: 768px) {
     main {
         display: flex;
@@ -45,6 +46,14 @@ main {
         text-align: center;
     }
 }
+
+@media (max-width: 768px) {
+    .background-clip {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 #header {
     display: flex;
     width: 235px;
